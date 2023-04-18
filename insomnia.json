@@ -1,52 +1,44 @@
-﻿{
-        "_type": "export",
-        "__export_format": 4,
-        "__export_date": "2023-04-18T00:00:00.000Z",
-        "resources": [
-                {
-                        "_id": "req_1",
-                        "parentId": null,
-                        "name": "Endpoint 1",
-                        "description": "",
-                        "url": "http://localhost:3000/endpoint1",
-                        "method": "GET",
-                        "headers": [],
-                        "body": {},
-                        "parameters": [],
-                        "authentication": {},
-                        "metaSortKey": -1,
-                        "createdAt": "2023-04-18T00:00:00.000Z",
-                        "_type": "request"
-                },
-                {
-                        "_id": "req_2",
-                        "parentId": null,
-                        "name": "Endpoint 2",
-                        "description": "",
-                        "url": "http://localhost:3000/endpoint2",
-                        "method": "POST",
-                        "headers": [],
-                        "body": {},
-                        "parameters": [],
-                        "authentication": {},
-                        "metaSortKey": -1,
-                        "createdAt": "2023-04-18T00:00:00.000Z",
-                        "_type": "request"
-                },
-                {
-                        "_id": "req_3",
-                        "parentId": null,
-                        "name": "Endpoint 3",
-                        "description": "",
-                        "url": "http://localhost:3000/endpoint3",
-                        "method": "PUT",
-                        "headers": [],
-                        "body": {},
-                        "parameters": [],
-                        "authentication": {},
-                        "metaSortKey": -1,
-                        "createdAt": "2023-04-18T00:00:00.000Z",
-                        "_type": "request"
-                }
-        ]
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-04-18T00:00:00.000Z",
+  "__export_source": "Insomnia v2022.0.2",
+  "resources": [
+    {
+      "_id": "req_1",
+      "parentId": null,
+      "name": "Caso de Prueba 1 - Agregar Lote Exitosamente",
+      "url": "http://localhost:3000/add-batch",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        "raw": "{\n  \"receiptItemId\": 1,\n  \"batchNumber\": \"BATCH123\",\n  \"packagesWeight\": 25,\n  \"expirationDate\": \"2023-12-31\",\n  \"packagesQuantity\": 5,\n  \"containerId\": 1,\n  \"unitQuantityPerPackage\": 10\n}"
+      },
+      "description": "Agregar un lote exitosamente a un item de recibo existente."
+    },
+    {
+      "_id": "req_2",
+      "parentId": null,
+      "name": "Caso de Prueba 2 - Error de Usuario Inválido",
+      "url": "http://localhost:3000/add-batch",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        "raw": "{\n  \"receiptItemId\": 1,\n  \"batchNumber\": \"BATCH123\",\n  \"packagesWeight\": 25,\n  \"expirationDate\": \"2023-12-31\",\n  \"packagesQuantity\": 5,\n  \"containerId\": 1,\n  \"unitQuantityPerPackage\": 10\n}"
+      },
+      "description": "Error de usuario inválido al agregar un lote."
+    }
+  ]
 }
