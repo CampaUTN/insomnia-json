@@ -2,30 +2,72 @@
 	"_type": "export",
 	"__export_format": 4,
 	"__export_date": "2023-04-18T00:00:00.000Z",
-	{
-  "resources": [
-    {
-      "name": "add-batch",
-      "description": "",
-      "url": "{{base_url}}/add-batch",
-      "method": "POST",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/json"
-        }
-      ],
-      "body": {
-        "mode": "raw",
-        "raw": "{\n  \"body\": {\n    \"receiptItemId\": \"receiptItemId\",\n    \"batchNumber\": \"batchNumber\",\n    \"packagesWeight\": \"packagesWeight\",\n    \"packagesQuantity\": \"packagesQuantity\",\n    \"unitQuantityPerPackage\": \"unitQuantityPerPackage\",\n    \"containerId\": \"containerId\",\n    \"expirationDate\": \"expirationDate\"\n  },\n  \"req\": \"req\"\n}"
-      },
-      "responses": [],
-      "authentication": {},
-      "metaData": {
-        "swaggerImporterVersion": "6.0.2"
-      }
-    }
-  ]
-}
-]
+	"resources": [
+		{
+			"name": "add-batch",
+			"description": "",
+			"url": "{{base_url}}/add-batch",
+			"method": "POST",
+			"headers": [
+			  {
+				"key": "Content-Type",
+				"value": "application/json"
+			  }
+			],
+			"body": {
+			  "mode": "raw",
+			  "raw": "{\n  \"body\": {\n    \"receiptItemId\": \"receiptItemId\",\n    \"batchNumber\": \"batchNumber\",\n    \"packagesWeight\": \"packagesWeight\",\n    \"packagesQuantity\": \"packagesQuantity\",\n    \"unitQuantityPerPackage\": \"unitQuantityPerPackage\",\n    \"containerId\": \"containerId\",\n    \"expirationDate\": \"expirationDate\"\n  },\n  \"req\": \"req\"\n}"
+			},
+			"responses": [],
+			"authentication": {},
+			"metaData": {
+			  "swaggerImporterVersion": "6.0.2"
+			}
+		},
+		{
+			"_id": "req_1",
+			"parentId": null,
+			"name": "Endpoint 1",
+			"description": "",
+			"url": "http://localhost:3000/endpoint1",
+			"method": "GET",
+			"headers": [],
+			"body": {},
+			"parameters": [],
+			"authentication": {},
+			"metaSortKey": -1,
+			"createdAt": "2023-04-18T00:00:00.000Z",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2",
+			"parentId": null,
+			"name": "Endpoint 2",
+			"description": "",
+			"url": "http://localhost:3000/endpoint2",
+			"method": "POST",
+			"headers": [],
+			"body": {},
+			"parameters": [],
+			"authentication": {},
+			"metaSortKey": -1,
+			"createdAt": "2023-04-18T00:00:00.000Z",
+			"_type": "request"
+		},
+		{
+			"_id": "req_3",
+			"parentId": null,
+			"name": "Endpoint 3",
+			"description": "",
+			"url": "http://localhost:3000/endpoint3",
+			"method": "PUT",
+			"headers": [],
+			"body": {},
+			"parameters": [],
+			"authentication": {},
+			"metaSortKey": -1,
+			"createdAt": "2023-04-18T00:00:00.000Z",
+			"_type": "request"
+		}
+	]
 }
