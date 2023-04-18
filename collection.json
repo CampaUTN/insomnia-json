@@ -1,0 +1,31 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2023-04-18T00:00:00.000Z",
+	{
+  "resources": [
+    {
+      "name": "add-batch",
+      "description": "",
+      "url": "{{base_url}}/add-batch",
+      "method": "POST",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        "raw": "{\n  \"body\": {\n    \"receiptItemId\": \"receiptItemId\",\n    \"batchNumber\": \"batchNumber\",\n    \"packagesWeight\": \"packagesWeight\",\n    \"packagesQuantity\": \"packagesQuantity\",\n    \"unitQuantityPerPackage\": \"unitQuantityPerPackage\",\n    \"containerId\": \"containerId\",\n    \"expirationDate\": \"expirationDate\"\n  },\n  \"req\": \"req\"\n}"
+      },
+      "responses": [],
+      "authentication": {},
+      "metaData": {
+        "swaggerImporterVersion": "6.0.2"
+      }
+    }
+  ]
+}
+]
+}
