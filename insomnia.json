@@ -1,44 +1,81 @@
-{
-  "_type": "export",
-  "__export_format": 4,
-  "__export_date": "2023-04-18T00:00:00.000Z",
-  "__export_source": "Insomnia v2022.0.2",
-  "resources": [
-    {
-      "_id": "req_1",
-      "parentId": null,
-      "name": "Caso de Prueba 1 - Agregar Lote Exitosamente",
-      "url": "http://localhost:3000/add-batch",
+[  {    "name": "Add Batch - Valid Request",    "request": {      "url": "https://example.com/add-batch",      "method": "POST",      "body": {        "receiptItemId": 1,        "batchNumber": "ABC123",        "packagesWeight": 10,        "unitQuantityPerPackage": 10,        "packagesQuantity": 1,        "containerId": 1,        "expirationDate": "2023-04-30"      },      "headers": {        "Content-Type": "application/json"      }    },    "response": []
+  },
+  {
+    "name": "Add Batch - Missing Required Fields",
+    "request": {
+      "url": "https://example.com/add-batch",
       "method": "POST",
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
       "body": {
-        "mode": "raw",
-        "raw": "{\n  \"receiptItemId\": 1,\n  \"batchNumber\": \"BATCH123\",\n  \"packagesWeight\": 25,\n  \"expirationDate\": \"2023-12-31\",\n  \"packagesQuantity\": 5,\n  \"containerId\": 1,\n  \"unitQuantityPerPackage\": 10\n}"
+        "receiptItemId": 1
       },
-      "description": "Agregar un lote exitosamente a un item de recibo existente."
+      "headers": {
+        "Content-Type": "application/json"
+      }
     },
-    {
-      "_id": "req_2",
-      "parentId": null,
-      "name": "Caso de Prueba 2 - Error de Usuario Inválido",
-      "url": "http://localhost:3000/add-batch",
-      "method": "POST",
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json"
+    "response": [
+      {
+        "name": "Error Response",
+        "status": 400,
+        "body": {
+          "errorView": "El numero de lote es necesario!"
         }
-      ],
+      }
+    ]
+  },
+  {
+    "name": "Add Batch - Invalid Packaging for Granel Product",
+    "request": {
+      "url": "https://example.com/add-batch",
+      "method": "POST",
       "body": {
-        "mode": "raw",
-        "raw": "{\n  \"receiptItemId\": 1,\n  \"batchNumber\": \"BATCH123\",\n  \"packagesWeight\": 25,\n  \"expirationDate\": \"2023-12-31\",\n  \"packagesQuantity\": 5,\n  \"containerId\": 1,\n  \"unitQuantityPerPackage\": 10\n}"
+        "receiptItemId": 1,
+        "batchNumber": "ABC123",
+        "packagesWeight": 10,
+        "unitQuantityPerPackage": 0.5,
+        "packagesQuantity": 1,
+        "containerId": 1,
+        "expirationDate": "2023-04-30"
       },
-      "description": "Error de usuario inválido al agregar un lote."
-    }
-  ]
-}
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "response": [
+      {
+        "name": "Error Response",
+        "status": 400,
+        "body": {
+          "errorView": "El producto no es granel y se intenta enviar cantidad en decimal"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Add Batch - Exceeded Received Quantity",
+    "request": {
+      "url": "https://example.com/add-batch",
+      "method": "POST",
+      "body": {
+        "receiptItemId": 1,
+        "batchNumber": "ABC123",
+        "packagesWeight": 10,
+        "unitQuantityPerPackage": 10,
+        "packagesQuantity": 2,
+        "containerId": 1,
+        "expirationDate": "2023-04-30"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "response": [
+      {
+        "name": "Error Response",
+        "status": 400,
+        "body": {
+          "errorView": "La cantidad recibida excede la pedida!"
+        }
+      }
+    ]
+  }
+]
